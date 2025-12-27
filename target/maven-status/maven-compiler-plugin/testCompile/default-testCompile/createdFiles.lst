@@ -1,0 +1,4 @@
+com/demo/playwright/pages/InvoicePage.class
+com/demo/playwright/tests/InvoiceStatusTest.class
+com/demo/playwright/utils/BaseTest.class
+com/demo/playwright/utils/TestConfig.class
