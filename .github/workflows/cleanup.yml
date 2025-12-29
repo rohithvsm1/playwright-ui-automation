@@ -1,0 +1,18 @@
+name: Delete workflow runs
+on:
+  schedule:
+    - cron: '0 0 1 * *'  # Monthly at 1AM
+  workflow_dispatch:  # Manual trigger button
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    permissions:
+      actions: write
+      contents: read
+    steps:
+    - uses: Mattraks/delete-workflow-runs@v2
+      with:
+        retain_days: 30
+        repository: ${{ github.repository }}
+
