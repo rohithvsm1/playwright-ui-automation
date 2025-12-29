@@ -1,4 +1,4 @@
-name: Playwright Java Tests
+˚kkkname: Playwright Java Tests
 on:
   push:
     branches: [ main, master ]
@@ -16,9 +16,6 @@ jobs:
       with:
         java-version: '17'
         distribution: 'temurin'
-    
-    - name: Install Playwright browsers
-      run: mvn dependency:get -Dartifact=com.microsoft.playwright:playwright:1.48.0:browser
     
     - name: Install Ubuntu dependencies
       run: |
@@ -60,5 +57,3 @@ jobs:
         name: surefire-reports
         path: target/surefire-reports/
 
-    
-    
