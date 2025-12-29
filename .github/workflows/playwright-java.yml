@@ -1,4 +1,4 @@
-˚kkkname: Playwright Java Tests
+name: Playwright Java Tests
 on:
   push:
     branches: [ main, master ]
