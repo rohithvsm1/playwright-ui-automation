@@ -1,4 +1,5 @@
 package com.demo.playwright.utils;
+
 import com.microsoft.playwright.*;
 import org.testng.annotations.*;
 
@@ -12,9 +13,13 @@ public class BaseTest {
     public static void launchBrowser() {
         System.out.println("🚀 LAUNCHING BROWSER...");
         playwright = Playwright.create();
-        browser = playwright.chromium().launch(new BrowserType.LaunchOptions()
-            .setHeadless(false)
-            .setSlowMo(1000));
+        
+        BrowserType.LaunchOptions options = new BrowserType.LaunchOptions()
+            .setHeadless(Boolean.parseBoolean(System.getProperty("playwright.headless", "true")))
+            .setSlowMo(0)
+            .setArgs(java.util.Arrays.asList("--no-sandbox", "--disable-setuid-sandbox"));
+        
+        browser = playwright.chromium().launch(options);
         System.out.println("✅ BROWSER LAUNCHED!");
     }
     
@@ -38,3 +43,4 @@ public class BaseTest {
         if (playwright != null) playwright.close();
     }
 }
+
