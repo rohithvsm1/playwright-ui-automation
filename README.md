@@ -29,7 +29,7 @@ toHaveValidBillingState: async (page, expected) => { ... }
 
 });
 
-8. Run Framework
+Run Framework
 npm run test:ui
 npm run test:visual
 
